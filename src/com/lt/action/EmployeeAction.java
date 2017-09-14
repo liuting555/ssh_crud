@@ -2,12 +2,18 @@ package com.lt.action;
 
 import java.util.List;
 
+
 import org.aspectj.weaver.Dump.INode;
 
 import com.lt.po.Employee;
 import com.lt.service.EmployeeService;
 import com.opensymphony.xwork2.ActionSupport;
 
+/**
+ * °¥ßÏÎ¹
+ * @author Administrator
+ *2017.09.14
+ */
 public class EmployeeAction extends ActionSupport{
 
 	private static final long serialVersionUID = 1L;
