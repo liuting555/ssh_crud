@@ -1,0 +1,31 @@
+1.本项目基于：
+http://blog.csdn.net/cai5/article/details/6565523
+
+2.遇到的问题有：
+  1>return this.getHibernateTemplate().find("from Employee order by id");
+      这里注意from Employee不是表名 ，而是表对应的po类的名字也就是*.hbm.xml的名字
+      
+   2> 怎样解决数据库中重新排序的问题
+   http://blog.sina.com.cn/s/blog_538cd20d0100gegv.html 
+   
+   3>页面从后台取出数据的时候，一定要有对应的set get方法，
+   
+3.分页技术参考：
+   http://blog.csdn.net/weixin_36708477/article/details/53188113
+   http://blog.csdn.net/guangmingfupin/article/details/8474151  
+   
+4.关于hibernate的一些方法：
+     在hibernate中，用hql语句查询实体类，采用list方法的返回结果为一个List，该List中封装的对象分为以下三种情况：  
+  
+   1.查询全部字段的情况下，如"from 实体类"，list中封装的对象为实体类本身，各属性都将得到填充。  
+  
+   2.只查询一个字段，默认情况下，list中封装的是Object对象。  
+  
+   3.查询两个或两个以上的字段，默认情况下，list中封装的是Object[],长度与所查询的字段数一致。  
+  
+      对于后两种情况，用标签遍历时不太方便，因为无法直接转换成实体类的对象。  
+  
+     比较简单的解决方法是：在hql中使用 select new 包名.类名(属性1，属性2……) from 实体类，  
+     同时在实体类中添加带参的构造方法，参数的个数和顺序与（属性1，属性2……) 保持一致，  
+      这样我们得到的list中存放的依然是实体类的对象，所查询到的属性得到了填充，使用起来更为方便。  
+           

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.lt.po">
+   <class name="Employee" table="employee">  
+     <id name="id" column="id" >
+     <generator class="native"/>
+     </id>
+     
+     <!-- 这里配置的时候，只写了属性name,没有通过column="name" 显式的指定字段，那么字段的名字也是name. -->
+     <property name="name"  />
+    
+  <property name="address" />
+ 
+  <property name="phone"  />
+  
+    </class>
+</hibernate-mapping>
