@@ -10,7 +10,7 @@ import com.lt.service.EmployeeService;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * 
+ * åœ¨gitç½‘é¡µä¸­æ”¹åŠ¨çš„ä»£ç ï¼Œå¯¹ å°±æ˜¯è¿™ä¸€è¡Œå­
  * @author Administrator
  *2017.09.14
  */
@@ -26,7 +26,7 @@ public class EmployeeAction extends ActionSupport{
     private String name;
     private String phone;
     
-    //Ìí¼ÓÒ»¸öÔ±¹¤
+    //æ·»åŠ ä¸€ä¸ªå‘˜å·¥
      public String add(){
        if(this.employeeService.getEmployee(employee.getName(), employee.getPhone()) != null){
     	   return INPUT;
@@ -36,7 +36,7 @@ public class EmployeeAction extends ActionSupport{
        }
      }
      
-     //²éÑ¯³ö¶àÔ±¹¤
+     //æŸ¥è¯¢å‡ºå¤šå‘˜å·¥
      public String list(){
     	 this.employees=this.employeeService.listEmployee();
     	 if(this.employees.size()>0){
@@ -46,7 +46,7 @@ public class EmployeeAction extends ActionSupport{
     	 }
      }
     
-     //¸ù¾İidÉ¾³ıµ¥¸öÔ±¹¤£¬»ò½øĞĞÅúÁ¿É¾³ı
+     //æ ¹æ®idåˆ é™¤å•ä¸ªå‘˜å·¥ï¼Œæˆ–è¿›è¡Œæ‰¹é‡åˆ é™¤
      public String delete(){
       String var=id+"";
      if ("".equals(var)) {
@@ -99,10 +99,10 @@ public class EmployeeAction extends ActionSupport{
      public String login(){
     	 Employee emo = employeeService.getEmployee(name, phone);
     	 List<Employee> list=employeeService.listEmployee();
-    	 if(emo!=null){  //ÑéÖ¤ÊÇ·ñÎªºÏ·¨ÓÃ»§
+    	 if(emo!=null){  //éªŒè¯æ˜¯å¦ä¸ºåˆæ³•ç”¨æˆ·
     		 return SUCCESS;
     	 }else{
-    		 if(list.size()>0){  //ÑéÖ¤Êı¾İ¿âÀïÃæÊÇ·ñÓĞÊı¾İ
+    		 if(list.size()>0){  //éªŒè¯æ•°æ®åº“é‡Œé¢æ˜¯å¦æœ‰æ•°æ®
     			 return INPUT;
     		 }else {
 				return ERROR;
